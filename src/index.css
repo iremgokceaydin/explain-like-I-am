@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-comic: "Bangers", system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#FFDE00] text-black font-sans;
+  }
+}
+
+@utility comic-border {
+  @apply border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)];
+}
+
+@utility comic-button {
+  @apply comic-border bg-white px-6 py-3 font-comic text-2xl transition-all hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] active:translate-x-0 active:translate-y-0 active:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)];
+}
+
+.markdown-body {
+  @apply space-y-4 leading-relaxed;
+}
+
+.markdown-body p {
+  @apply text-lg;
+}
+
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+  @apply font-comic text-3xl mt-6 mb-2;
+}
+
+.markdown-body ul {
+  @apply list-disc list-inside space-y-2;
+}
